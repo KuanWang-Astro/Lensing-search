@@ -42,15 +42,17 @@ halocat = CachedHaloCatalog(simname = 'diemerL0500', version_name = 'antonio', r
                             halo_finder = 'rockstar',ptcl_version_name='antonioz0')
 
 Lbox = 500
+particle_portion = 0.1
 
 rp_bins = np.logspace(-1.398, 1.176, 14)  ##to match the leauthaud paper
 num_ptcls_to_use = int(1e6)
-particle_masses = np.zeros(num_ptcls_to_use)+halocat.particle_mass
+particle_masses = np.zeros(num_ptcls_to_use)+halocat.particle_mass/particle_portion
 total_num_ptcls_in_snapshot = len(halocat.ptcl_table)
 downsampling_factor = total_num_ptcls_in_snapshot/float(num_ptcls_to_use)
 ##ggl
 
 pi_max = 60
+#pi_max = 80
 r_wp = np.logspace(-1, np.log10(Lbox)-1, 20)
 ##wp
 

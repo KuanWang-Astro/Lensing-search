@@ -1,5 +1,0 @@
-outfile:bolplanck_test
-td:0
-central:False
-infile:../ABMCMCfiles/corr1_wp20.0.covar.chain
-Nparams:1
